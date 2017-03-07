@@ -23,7 +23,7 @@
       <table align="center">
           <tr>
           <td><img src="images/Fanfare-Logo-WEB-170x170.png" width="100" height="100" alt=""/></td>
-          <td><h1 class="text-center">Blimp Operator System</h1></td>
+          <td><h1 class="text-center">Operator System</h1></td>
           </tr>
       </table>
     </div>
@@ -66,7 +66,7 @@
         <div class="text-center border-groove col-lg-6" >Stadium Overlay Button</div>
     </div>
   </div>
-  <form action="http://128.2.238.137/insert.php" method="post">
+  <form id="play-tracker-form" method="post">
   <div class = "rightbar">
       <div class="row text-center">
         <div class="col-md-6 col-md-offset-3 col-lg-9 col-lg-offset-3 border-groove">Play Tracker</div>
@@ -75,64 +75,92 @@
             <div class="col-md-6 col-md-offset-3 col-lg-9 col-lg-offset-3 border-groove"> 
             	<p style="OVERFLOW:auto; WIDTH: 315px; HEIGHT: 200px">
             	  <label>
-            	    <input type="checkbox" name="playList[]" value="0" id="PlayList_0">
-            	    Hit</label>
+            	    <input type="checkbox" name="playList[]" value="0">
+            	    Error</label>
             	  <br>
             	  <label>
-            	    <input type="checkbox" name="playList[]" value="1" id="PlayList_1">
-            	    Double</label>
-            	  <br>
-            	  <label>
-            	    <input type="checkbox" name="playList[]" value="2" id="PlayList_2">
-            	    Triple</label>
-            	  <br>
-            	  <label>
-            	    <input type="checkbox" name="playList[]" value="3" id="PlayList_3">
-            	    Home Run</label>
-            	  <br>
-            	  <label>
-            	    <input type="checkbox" name="playList[]" value="4" id="PlayList_4">
-            	    Inside the Park HR</label>
-            	  <br>
-            	  <label>
-            	    <input type="checkbox" name="playList[]" value="5" id="PlayList_5">
+            	    <input type="checkbox" name="playList[]" value="1">
             	    Grand Slam</label>
             	  <br>
             	  <label>
-            	    <input type="checkbox" name="playList[]" value="6" id="PlayList_6">
-            	    Ground Rule Double</label>
+            	    <input type="checkbox" name="playList[]" value="2">
+            	    Shutout Inning</label>
             	  <br>
             	  <label>
-            	    <input type="checkbox" name="playList[]" value="7" id="PlayList_7">
-            	    Steal</label>
+            	    <input type="checkbox" name="playList[]" value="3">
+            	    Long Out</label>
             	  <br>
             	  <label>
-            	    <input type="checkbox" name="playList[]" value="8" id="PlayList_8">
-            	    Walk Off</label>
+            	    <input type="checkbox" name="playList[]" value="4">
+            	    Runs Batted</label>
             	  <br>
             	  <label>
-            	    <input type="checkbox" name="playList[]" value="9" id="PlayList_9">
-            	    Double Play</label>
+            	    <input type="checkbox" name="playList[]" value="5">
+            	    Pop Fly</label>
             	  <br>
-                  <label>
-            	    <input type="checkbox" name="playList[]" value="9" id="PlayList_9">
+            	  <label>
+            	    <input type="checkbox" name="playList[]" value="6">
             	    Triple Play</label>
             	  <br>
-                  <label>
-            	    <input type="checkbox" name="playList[]" value="9" id="PlayList_9">
-            	    Strikeout</label>
+            	  <label>
+            	    <input type="checkbox" name="playList[]" value="7">
+            	    Double Play</label>
+            	  <br>
+            	  <label>
+            	    <input type="checkbox" name="playList[]" value="8">
+            	    Grounder</label>
+            	  <br>
+            	  <label>
+            	    <input type="checkbox" name="playList[]" value="9">
+            	    Steal</label>
             	  <br>
                   <label>
-            	    <input type="checkbox" name="playList[]" value="9" id="PlayList_9">
+            	    <input type="checkbox" name="playList[]" value="10">
             	    Pick Off</label>
             	  <br>
                   <label>
-            	    <input type="checkbox" name="playList[]" value="9" id="PlayList_9">
-            	    Block the Plate</label>
+            	    <input type="checkbox" name="playList[]" value="11">
+            	    Walk</label>
             	  <br>
                   <label>
-            	    <input type="checkbox" name="playList[]" value="9" id="PlayList_9">
-            	    Long Arm</label>
+            	    <input type="checkbox" name="playList[]" value="12">
+            	    Blocked Run</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="13">
+            	    Strike Out</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="14">
+            	    Hit</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="15">
+            	    Home Run</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="16">
+            	    Pitch Count: 16 &amp; Under</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="17">
+            	    Walk Off</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="18">
+            	    Pitch Count: 17 &amp; Over</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="19">
+            	    First Base</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="20">
+            	    Second Base</label>
+            	  <br>
+                  <label>
+            	    <input type="checkbox" name="playList[]" value="21">
+            	    Third Base</label>
             	  <br>
           	  </p>
 
@@ -156,5 +184,40 @@
 
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="js/bootstrap.js"></script>
+
+<script>
+  const connection = new WebSocket('ws://128.237.140.116:8080');
+  connection.addEventListener('open', function () {
+    console.log('Connected to WebSocket server at ' + connection.url);
+
+    // Listen on the play tracker form.
+    const playTrackerForm = document.getElementById('play-tracker-form');
+    playTrackerForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const selected = Array.from(playTrackerForm.elements['playList[]'])
+        .filter(item => item.checked)
+        .map(item => item.value);
+      console.log('Sending events: ', selected);
+      connection.send(JSON.stringify(selected));
+
+      // Submit the data to the server.
+      jQuery.ajax({
+        url: '/Web Application/insert.php',
+        method: 'POST',
+        data: jQuery(playTrackerForm).serialize(),
+        success: function (data, textStatus, jqXHR) {
+          console.log('Events successfully persisted to server');
+
+          // Clear the fields.
+          Array.from(playTrackerForm.elements['playList[]'])
+            .forEach(item => item.checked = false);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log('Error persisting data to server: ', errorThrown);
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
