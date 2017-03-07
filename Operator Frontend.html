@@ -196,7 +196,7 @@
       e.preventDefault();
       const selected = Array.from(playTrackerForm.elements['playList[]'])
         .filter(item => item.checked)
-        .map(item => item.value);
+        .map(item => parseInt(item.value));
       console.log('Sending events: ', selected);
       connection.send(JSON.stringify(selected));
 
