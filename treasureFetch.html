@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+    <input id="section-id" type="text" placeholder="Section ID" />
+    <button id="section-id-button" type="button">Set Section ID</button>
+
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            const sectionIdInput = document.getElementById('section-id');
+            const sectionIdBtn = document.getElementById('section-id-button');
+
+            const fetchData = function () {
+                jQuery
+                    .ajax({
+                        url: 'treasureFetch.php',
+                        data: { sectionId: sectionIdInput.value }
+                    })
+                    .then(function (data) {
+                        document.body.style.backgroundColor = data;
+                    })
+                    .catch(function (e) {
+                        console.log(e);
+                    });
+            };
+
+            sectionIdBtn.addEventListener('click', function () {
+                setInterval(fetchData, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
