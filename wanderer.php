@@ -21,6 +21,7 @@
     const getAggregate = function () {
       // Update the wanderer state.
       const updateWanderer = function () {
+         document.body.style.backgroundColor = "white";
         const sectionIdInput = document.getElementById('section-id');
         if (ws.readyState === ws.OPEN) {
           var msg = {
