@@ -1,0 +1,29 @@
+.header-container {
+    background: #ffc300;
+}
+
+.header {
+    text-align: center;
+}
+
+.header > .logo {
+    height: 96px;
+    width: 96px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.header > h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    line-height: 96px;
+    font-weight: bold;
+}
+
+.play-list {
+    column-count: 5;
+    font-size: 1.2em;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
