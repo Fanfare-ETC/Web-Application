@@ -186,7 +186,12 @@
 <script src="js/bootstrap.js"></script>
 
 <script>
-  const connection = new WebSocket('ws://128.237.140.116:8080');
+  <?php
+  $playbook_notifier_host = isset($_ENV['PLAYBOOK_NOTIFIER_HOST']) ? $_ENV['PLAYBOOK_NOTIFIER_HOST'] : 'localhost';
+  $playbook_notifier_port = isset($_ENV['PLAYBOOK_NOTIFIER_PORT']) ? $_ENV['PLAYBOOK_NOTIFIER_PORT'] : 9001;
+  echo "const url = 'ws://${playbook_notifier_host}:${playbook_notifier_port}';\n";
+  ?>
+  const connection = new WebSocket(url);
   connection.addEventListener('open', function () {
     console.log('Connected to WebSocket server at ' + connection.url);
 
