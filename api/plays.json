@@ -5,7 +5,7 @@
 }, {
     "name": "Grand Slam",
     "value": 1,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Shutout Inning",
     "value": 2,
@@ -13,11 +13,11 @@
 }, {
     "name": "Long Out",
     "value": 3,
-    "team": "batting"
+    "team": "fielding"
 }, {
     "name": "Run Batted In",
     "value": 4,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Pop Fly",
     "value": 5,
@@ -25,11 +25,11 @@
 }, {
     "name": "Triple Play",
     "value": 6,
-    "team": "batting"
+    "team": "fielding"
 }, {
     "name": "Double Play",
     "value": 7,
-    "team": "batting"
+    "team": "fielding"
 }, {
     "name": "Grounded",
     "value": 8,
@@ -37,31 +37,31 @@
 }, {
     "name": "Steal",
     "value": 9,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Pick Off",
     "value": 10,
-    "team": "batting"
+    "team": "fielding"
 }, {
     "name": "Walk",
     "value": 11,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Blocked Run",
     "value": 12,
-    "team": "batting"
+    "team": "fielding"
 }, {
     "name": "Strike Out",
     "value": 13,
-    "team": "batting"
+    "team": "fielding"
 }, {
     "name": "Hit",
     "value": 14,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Home Run",
     "value": 15,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Pitch Count: 16 & Under",
     "value": 16,
@@ -69,7 +69,7 @@
 }, {
     "name": "Walk Off",
     "value": 17,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Pitch Count: 17 & Over",
     "value": 18,
@@ -77,13 +77,13 @@
 }, {
     "name": "First Base",
     "value": 19,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Second Base",
     "value": 20,
-    "team": "fielding"
+    "team": "batting"
 }, {
     "name": "Third Base",
     "value": 21,
-    "team": "fielding"
+    "team": "batting"
 }]
