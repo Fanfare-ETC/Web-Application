@@ -15,10 +15,7 @@
                 }
             });
 
-            request.addEventListener('error', function (e) {
-                reject(e);
-            });
-
+            request.addEventListener('error', reject);
             request.open('GET', '/api/plays.json', true);
             request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             request.send(null);
@@ -77,29 +74,25 @@
             .filter(item => item.checked)
             .map(item => parseInt(item.value));
         console.log('Sending events: ', selected);
-        connection.send(JSON.stringify(selected));
-        toastr.info('Plays successfully submitted!');
+        connection.send(JSON.stringify({
+            event: 'operator:createPlays',
+            data: selected
+        }));
+    };
 
-        // Submit the data to the server.
-        jQuery.ajax({
-            url: '/Web Application/insert.php',
-            method: 'POST',
-            data: jQuery(form).serialize(),
-            success: function (data, textStatus, jqXHR) {
-            console.log('Events successfully persisted to server');
+    // Handlers for server messages.
+    const messageHandlers = {
+        'server:error': (message) => {
+            toastr.error('The server reported an error.')
+        },
+        'server:playsCreated': (message) => {
+            toastr.success('Plays successfully submitted!');
 
-            // Clear the fields.
+            // Uncheck everything.
+            const form = document.getElementById('play-tracker-form');
             Array.from(form.elements['playList[]'])
                 .forEach(item => item.checked = false);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-            console.log('Error persisting data to server: ', errorThrown);
-            }
-        });
-
-        // Uncheck everything.
-        Array.from(form.elements['playList[]'])
-            .forEach(item => item.checked = false);
+        }
     };
 
     // Connect to the notifier server.
@@ -108,12 +101,29 @@
             populatePlaysList(plays);
 
             connection = new WebSocket(PLAYBOOK_NOTIFIER_URL);
+            
             connection.addEventListener('open', function () {
                 console.log('Connected to WebSocket server at ' + connection.url);
 
                 // Listen on the play tracker form.
                 const playTrackerForm = document.getElementById('play-tracker-form');
                 playTrackerForm.addEventListener('submit', playTrackerFormHandler);
+            });
+
+            connection.addEventListener('message', function (e) {
+                message = JSON.parse(e.data);
+                const handler = messageHandlers[message.event];
+                if (handler === undefined) {
+                    console.log('Unknown message ', message.event, ' received!');
+                    return;
+                }
+
+                handler.call(connection, message);
+            });
+
+            connection.addEventListener('close', function () {
+                console.log('Disconnected from server!');
+                toastr.error('Disconnected from server. Refresh to try again.');
             });
         })
         .catch(function (e) {
