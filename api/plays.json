@@ -1,0 +1,67 @@
+[{
+    "name": "Error",
+    "value": 0
+}, {
+    "name": "Grand Slam",
+    "value": 1
+}, {
+    "name": "Shutout Inning",
+    "value": 2
+}, {
+    "name": "Long Out",
+    "value": 3
+}, {
+    "name": "Runs Batted",
+    "value": 4
+}, {
+    "name": "Pop Fly",
+    "value": 5
+}, {
+    "name": "Triple Play",
+    "value": 6
+}, {
+    "name": "Double Fly",
+    "value": 7
+}, {
+    "name": "Grounded",
+    "value": 8
+}, {
+    "name": "Steal",
+    "value": 9
+}, {
+    "name": "Pick Off",
+    "value": 10
+}, {
+    "name": "Walk",
+    "value": 11
+}, {
+    "name": "Blocked Run",
+    "value": 12
+}, {
+    "name": "Strike Out",
+    "value": 13
+}, {
+    "name": "Hit",
+    "value": 14
+}, {
+    "name": "Home Run",
+    "value": 15
+}, {
+    "name": "Pitch Count: 16 & Under",
+    "value": 16
+}, {
+    "name": "Walk Off",
+    "value": 17
+}, {
+    "name": "Pitch Count: 17 & Over",
+    "value": 18
+}, {
+    "name": "First Base",
+    "value": 19
+}, {
+    "name": "Second Base",
+    "value": 20
+}, {
+    "name": "Third Base",
+    "value": 21
+}]

@@ -27,3 +27,11 @@
     margin-top: 32px;
     margin-bottom: 32px;
 }
+
+.play-list > div.checkbox {
+    margin-top: 0;
+}
+
+.play-list > div.checkbox > label {
+    font-weight: bold;
+}

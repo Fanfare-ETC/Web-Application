@@ -8,7 +8,8 @@
 
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+<link href="css/operator.css" rel="stylesheet">
 
 <!-- Typekit -->
 <script src="https://use.typekit.net/mpr2cpx.js"></script>
@@ -77,97 +78,8 @@
         </div>
       </div>
       <div class="row text-left">
-        <div class="col-md-12 well play-list"> 
-          <label>
-            <input type="checkbox" name="playList[]" value="0">
-            Error</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="1">
-            Grand Slam</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="2">
-            Shutout Inning</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="3">
-            Long Out</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="4">
-            Runs Batted</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="5">
-            Pop Fly</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="6">
-            Triple Play</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="7">
-            Double Play</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="8">
-            Grounder</label>
-          <br>
-          <label>
-            <input type="checkbox" name="playList[]" value="9">
-            Steal</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="10">
-            Pick Off</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="11">
-            Walk</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="12">
-            Blocked Run</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="13">
-            Strike Out</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="14">
-            Hit</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="15">
-            Home Run</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="16">
-            Pitch Count: 16 &amp; Under</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="17">
-            Walk Off</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="18">
-            Pitch Count: 17 &amp; Over</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="19">
-            First Base</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="20">
-            Second Base</label>
-          <br>
-            <label>
-            <input type="checkbox" name="playList[]" value="21">
-            Third Base</label>
-          <br>
-        </div>
-      </div>
+        <!-- Populated in JS -->
+        <div class="col-md-12 well play-list"></div>
       <div class="row">
         <div class="col-md-12 text-center border-groove">
           <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
@@ -185,49 +97,19 @@
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-  <script src="js/jquery-1.11.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
   <!-- Include all compiled plugins (below), or include individual files as needed --> 
   <script src="js/bootstrap.js"></script>
+  <script src="js/operator.js"></script>
 
   <script>
     <?php
     $playbook_notifier_host = isset($_ENV['PLAYBOOK_NOTIFIER_HOST']) ? $_ENV['PLAYBOOK_NOTIFIER_HOST'] : 'localhost';
     $playbook_notifier_port = isset($_ENV['PLAYBOOK_NOTIFIER_PORT']) ? $_ENV['PLAYBOOK_NOTIFIER_PORT'] : 9001;
-    echo "const url = 'ws://${playbook_notifier_host}:${playbook_notifier_port}';\n";
+    echo "const PLAYBOOK_NOTIFIER_URL = 'ws://${playbook_notifier_host}:${playbook_notifier_port}';\n";
     ?>
-    const connection = new WebSocket(url);
-    connection.addEventListener('open', function () {
-      console.log('Connected to WebSocket server at ' + connection.url);
-
-      // Listen on the play tracker form.
-      const playTrackerForm = document.getElementById('play-tracker-form');
-      playTrackerForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const selected = Array.from(playTrackerForm.elements['playList[]'])
-          .filter(item => item.checked)
-          .map(item => parseInt(item.value));
-        console.log('Sending events: ', selected);
-        connection.send(JSON.stringify(selected));
-
-        // Submit the data to the server.
-        jQuery.ajax({
-          url: '/Web Application/insert.php',
-          method: 'POST',
-          data: jQuery(playTrackerForm).serialize(),
-          success: function (data, textStatus, jqXHR) {
-            console.log('Events successfully persisted to server');
-
-            // Clear the fields.
-            Array.from(playTrackerForm.elements['playList[]'])
-              .forEach(item => item.checked = false);
-          },
-          error: function (jqXHR, textStatus, errorThrown) {
-            console.log('Error persisting data to server: ', errorThrown);
-          }
-        });
-      });
-    });
   </script>
 </body>
 </html>
