@@ -32,6 +32,14 @@
     margin-top: 0;
 }
 
+.play-list > div.checkbox.team-fielding {
+    color: #bf3626;
+}
+
+.play-list > div.checkbox.team-batting {
+    color: #002b65;
+}
+
 .play-list > div.checkbox > label {
     font-weight: bold;
 }

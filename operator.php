@@ -83,6 +83,7 @@
       <div class="row">
         <div class="col-md-12 text-center border-groove">
           <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
+          <button type="button" class="btn btn-clear-predictions">Clear Predictions</button>
         </div>
       </div>
     </form>

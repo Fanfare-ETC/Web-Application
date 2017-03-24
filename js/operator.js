@@ -43,6 +43,15 @@
             // <div class="checkbox">
             const playElem = document.createElement('div');
             playElem.classList.add('checkbox');
+            switch (play.team) {
+            case 'fielding':
+                playElem.classList.add('team-fielding');
+                break;
+            case "batting":
+                playElem.classList.add('team-batting');
+                break;
+            default:
+            }
 
             //   <label>
             const playElemLabel = document.createElement('label');
@@ -80,6 +89,13 @@
         }));
     };
 
+    // Clear predictions button callback.
+    const clearPredictionsBtnHandler = function () {
+        connection.send(JSON.stringify({
+            event: 'operator:clearPredictions'
+        }));
+    };
+
     // Handlers for server messages.
     const messageHandlers = {
         'server:error': (message) => {
@@ -108,6 +124,10 @@
                 // Listen on the play tracker form.
                 const playTrackerForm = document.getElementById('play-tracker-form');
                 playTrackerForm.addEventListener('submit', playTrackerFormHandler);
+
+                // Listen on clear predictions button.
+                const clearPredictionsBtn = document.getElementsByClassName('btn-clear-predictions')[0];
+                clearPredictionsBtn.addEventListener('click', clearPredictionsBtnHandler);
             });
 
             connection.addEventListener('message', function (e) {
