@@ -24,7 +24,9 @@
 
     // Populate list of plays in the UI.
     const populatePlaysList = function (plays) {
-        const playListElem = document.getElementsByClassName('play-list')[0];
+        const playListFieldingElem = document.getElementsByClassName('play-list-fielding')[0];
+        const playListBattingElem = document.getElementsByClassName('play-list-batting')[0];
+        const playListNullElem = document.getElementsByClassName('play-list-null')[0];
 
         plays.sort((a, b) => {
             const A = a.name.toUpperCase();
@@ -39,39 +41,45 @@
             }
         });
 
-        plays.forEach(function (play) {
-            // <div class="checkbox">
-            const playElem = document.createElement('div');
-            playElem.classList.add('checkbox');
-            switch (play.team) {
-            case 'fielding':
-                playElem.classList.add('team-fielding');
-                break;
-            case "batting":
-                playElem.classList.add('team-batting');
-                break;
-            default:
+        const createPlay = function (container) {
+            return function (play) {
+                // <div class="checkbox">
+                const playElem = document.createElement('div');
+                playElem.classList.add('checkbox');
+                switch (play.team) {
+                case 'fielding':
+                    playElem.classList.add('team-fielding');
+                    break;
+                case "batting":
+                    playElem.classList.add('team-batting');
+                    break;
+                default:
+                }
+
+                //   <label>
+                const playElemLabel = document.createElement('label');
+
+                //     <input>
+                //     {{ play.name }}
+                const playElemLabelInput = document.createElement('input');
+                playElemLabelInput.type = 'checkbox';
+                playElemLabelInput.name = 'playList[]';
+                playElemLabelInput.value = play.value;
+                const playElemLabelText = document.createTextNode(play.name);
+
+                //   </label>
+                playElemLabel.appendChild(playElemLabelInput);
+                playElemLabel.appendChild(playElemLabelText);
+
+                // </div>
+                playElem.appendChild(playElemLabel);
+                container.appendChild(playElem);
             }
+        };
 
-            //   <label>
-            const playElemLabel = document.createElement('label');
-
-            //     <input>
-            //     {{ play.name }}
-            const playElemLabelInput = document.createElement('input');
-            playElemLabelInput.type = 'checkbox';
-            playElemLabelInput.name = 'playList[]';
-            playElemLabelInput.value = play.value;
-            const playElemLabelText = document.createTextNode(play.name);
-
-            //   </label>
-            playElemLabel.appendChild(playElemLabelInput);
-            playElemLabel.appendChild(playElemLabelText);
-
-            // </div>
-            playElem.appendChild(playElemLabel);
-            playListElem.appendChild(playElem);
-        });
+        plays.filter(play => play.team === 'fielding').forEach(createPlay(playListFieldingElem));
+        plays.filter(play => play.team === 'batting').forEach(createPlay(playListBattingElem));
+        plays.filter(play => play.team === null).forEach(createPlay(playListNullElem));
     };
 
     // Form submission callback.

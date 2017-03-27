@@ -79,7 +79,24 @@
       </div>
       <div class="row text-left">
         <!-- Populated in JS -->
-        <div class="col-md-12 well play-list"></div>
+        <div class="col-md-4 play-category">
+          <div class="well">
+            <h3>Fielding</h3>
+            <div class="play-list play-list-fielding"></div>
+          </div>
+        </div>
+        <div class="col-md-4 play-category">
+          <div class="well">
+            <h3>Batting</h3>
+            <div class="play-list play-list-batting"></div>
+          </div>
+        </div>
+        <div class="col-md-4 play-category">
+          <div class="well">
+            <h3>Others</h3>
+            <div class="play-list play-list-null"></div>
+          </div>
+        </div>
       <div class="row">
         <div class="col-md-12 text-center border-groove">
           <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
