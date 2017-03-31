@@ -25,7 +25,7 @@
         const sectionIdInput = document.getElementById('section-id');
         if (ws.readyState === ws.OPEN) {
           var msg = {
-              section: sectionIdInput.value,
+              section: parseInt(sectionIdInput.value) - 1,
               slection: 3,
               method: "get"
           };
