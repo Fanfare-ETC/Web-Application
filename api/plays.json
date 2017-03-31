@@ -75,15 +75,15 @@
     "value": 18,
     "team": null
 }, {
-    "name": "First Base",
+    "name": "Single",
     "value": 19,
     "team": "batting"
 }, {
-    "name": "Second Base",
+    "name": "Double",
     "value": 20,
     "team": "batting"
 }, {
-    "name": "Third Base",
+    "name": "Triple",
     "value": 21,
     "team": "batting"
 }]
