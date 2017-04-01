@@ -15,11 +15,11 @@
     "value": 3,
     "team": "fielding"
 }, {
-    "name": "Run Batted In",
+    "name": "Run Scored",
     "value": 4,
     "team": "batting"
 }, {
-    "name": "Pop Fly",
+    "name": "Fly Out",
     "value": 5,
     "team": null
 }, {
@@ -31,7 +31,7 @@
     "value": 7,
     "team": "fielding"
 }, {
-    "name": "Grounded",
+    "name": "Ground Out",
     "value": 8,
     "team": null
 }, {
@@ -67,23 +67,39 @@
     "value": 16,
     "team": null
 }, {
-    "name": "Walk Off",
-    "value": 17,
-    "team": "batting"
-}, {
     "name": "Pitch Count: 17 & Over",
-    "value": 18,
+    "value": 17,
     "team": null
 }, {
     "name": "Single",
-    "value": 19,
+    "value": 18,
     "team": "batting"
 }, {
     "name": "Double",
-    "value": 20,
+    "value": 19,
     "team": "batting"
 }, {
     "name": "Triple",
-    "value": 21,
+    "value": 20,
     "team": "batting"
+}, {
+    "name": "Batter Count: 4 & Under",
+    "value": 21,
+    "team": null
+}, {
+    "name": "Batter Count: 5 & Over",
+    "value": 22,
+    "team": null
+}, {
+    "name": "Most Balls: Left Outfield",
+    "value": 23,
+    "team": null
+}, {
+    "name": "Most Balls: Right Outfield",
+    "value": 24,
+    "team": null
+}, {
+    "name": "Most Balls: Infield",
+    "value": 25,
+    "team": null
 }]
