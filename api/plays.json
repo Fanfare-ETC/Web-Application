@@ -21,7 +21,7 @@
 }, {
     "name": "Fly Out",
     "value": 5,
-    "team": null
+    "team": "fielding"
 }, {
     "name": "Triple Play",
     "value": 6,
