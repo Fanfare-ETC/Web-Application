@@ -33,7 +33,7 @@
 }, {
     "name": "Ground Out",
     "value": 8,
-    "team": null
+    "team": "fielding"
 }, {
     "name": "Steal",
     "value": 9,
