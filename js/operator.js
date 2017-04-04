@@ -103,6 +103,8 @@
             event: 'operator:clearPredictions'
         }));
     };
+    
+    //
 
     // Handlers for server messages.
     const messageHandlers = {
@@ -136,6 +138,9 @@
                 // Listen on clear predictions button.
                 const clearPredictionsBtn = document.getElementsByClassName('btn-clear-predictions')[0];
                 clearPredictionsBtn.addEventListener('click', clearPredictionsBtnHandler);
+                
+                const start_th = document.getElementsByClassName('btn-clear-predictions')[0];
+                clearPredictionsBtn.addEventListener('click', clearPredictionsBtnHandler);
             });
 
             connection.addEventListener('message', function (e) {
@@ -157,4 +162,48 @@
         .catch(function (e) {
             console.log('Error loading operator console: ', e);  
         });
+})();
+
+(function () {
+    
+    const thwinnerFormHandler = function (e) {
+        e.preventDefault();
+
+        const form = e.target;
+        const winner = form.elements['winner'].value; 
+        console.log('Sending winner: ', winner);
+        connection.send(JSON.stringify({
+            method:'winner',
+            name:winner
+        }));
+    };
+    
+     const start_thBtnHandler = function () {
+        console.log('Sending start signal');
+        connection.send(JSON.stringify({
+            method:'start'
+        }));
+    };
+    const stop_thBtnHandler = function () {
+        console.log('Sending stop signal');
+        connection.send(JSON.stringify({
+            method:'stop'
+        }));
+    };
+    // Operator interface globals.
+    let connection = null;
+    connection = new WebSocket(TREASUREHUNT_URL);
+    connection.addEventListener('open', function () {
+                console.log('Connected to WebSocket server at ' + connection.url);
+        
+                const thwinnerForm = document.getElementById('thwinner-form');
+                thwinnerForm.addEventListener('submit', thwinnerFormHandler);
+        
+                const start_th = document.getElementsByClassName('btn-start-treasurehunt')[0];
+                start_th.addEventListener('click', start_thBtnHandler);
+        
+                const stop_th = document.getElementsByClassName('btn-stop-treasurehunt')[0];
+                stop_th.addEventListener('click', stop_thBtnHandler);
+            });
+    
 })();

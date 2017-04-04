@@ -100,11 +100,20 @@
       <div class="row">
         <div class="col-md-12 text-center border-groove">
           <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
-          <button type="button" class="btn btn-clear-predictions">Clear Predictions</button>
+          <button type="button" class="btn btn-clear-predictions">Clear Predictions</button>		
         </div>
-      </div>
+      </div>	 
     </form>
   </div>
+	  <button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
+		  <button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
+		  <br><br>
+		  <form id="thwinner-form" method="post">
+  			Enter Winner :<br>
+ 			 <input id="winner" type="text" value="section1">
+  			<br><br>
+  			<input type="submit" name="formSubmit" value="Submit">
+		  </form> 
 
   <div class="vertical-seperator"></div>
   <div class = "container-fluid">
@@ -118,16 +127,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-  <!-- Include all compiled plugins (below), or include individual files as needed --> 
-  <script src="js/bootstrap.js"></script>
-  <script src="js/operator.js"></script>
-
   <script>
     <?php
     $playbook_notifier_host = isset($_ENV['PLAYBOOK_NOTIFIER_HOST']) ? $_ENV['PLAYBOOK_NOTIFIER_HOST'] : 'localhost';
     $playbook_notifier_port = isset($_ENV['PLAYBOOK_NOTIFIER_PORT']) ? $_ENV['PLAYBOOK_NOTIFIER_PORT'] : 9001;
+	$treasurehunt_host = isset($_ENV['TREASUREHUNT_HOST']) ? $_ENV['TREASUREHUNT_HOST'] : 'localhost';
+    $treasurehunt_port = isset($_ENV['TREASUREHUNT_PORT']) ? $_ENV['TREASUREHUNT_PORT'] : 9000;
     echo "const PLAYBOOK_NOTIFIER_URL = 'ws://${playbook_notifier_host}:${playbook_notifier_port}';\n";
+	echo "const TREASUREHUNT_URL = 'ws://${treasurehunt_host}:${treasurehunt_port}';\n";
     ?>
   </script>
+  <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="js/bootstrap.js"></script>
+  <script src="js/operator.js"></script>
 </body>
 </html>
