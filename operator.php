@@ -108,6 +108,8 @@
 	  <button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
 		  <button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
 		  <br><br>
+	      <p id="status_th"><b>Press Start/STop to begin TreasureHunt</b></p>
+	      <br><br>
 		  <form id="thwinner-form" method="post">
   			Enter Winner :<br>
  			 <input id="winner" type="text" value="section1">

@@ -179,12 +179,14 @@
     };
     
      const start_thBtnHandler = function () {
+        document.getElementById("status_th").innerHTML = "<b><i> You STARTED the Hunt! It's in progress!<i> <b>";
         console.log('Sending start signal');
         connection.send(JSON.stringify({
             method:'start'
         }));
     };
     const stop_thBtnHandler = function () {
+        document.getElementById("status_th").innerHTML = "<b><i> You STOPPED the Hunt! It's over!<i> <b>";
         console.log('Sending stop signal');
         connection.send(JSON.stringify({
             method:'stop'
