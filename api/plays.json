@@ -55,7 +55,7 @@
     "value": 13,
     "team": "fielding"
 }, {
-    "name": "Hit",
+    "name": "Hit by Pitch",
     "value": 14,
     "team": "batting"
 }, {
