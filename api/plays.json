@@ -1,105 +1,93 @@
 [{
-    "name": "Error",
+    "name": "Shutout Inning",
     "value": 0,
     "team": null
 }, {
-    "name": "Grand Slam",
+    "name": "Run Scored",
     "value": 1,
     "team": "batting"
 }, {
-    "name": "Shutout Inning",
-    "value": 2,
-    "team": null
-}, {
-    "name": "Long Out",
-    "value": 3,
-    "team": "fielding"
-}, {
-    "name": "Run Scored",
-    "value": 4,
-    "team": "batting"
-}, {
     "name": "Fly Out",
-    "value": 5,
+    "value": 2,
     "team": "fielding"
 }, {
     "name": "Triple Play",
-    "value": 6,
+    "value": 3,
     "team": "fielding"
 }, {
     "name": "Double Play",
-    "value": 7,
+    "value": 4,
     "team": "fielding"
 }, {
     "name": "Ground Out",
-    "value": 8,
+    "value": 5,
     "team": "fielding"
 }, {
     "name": "Steal",
-    "value": 9,
+    "value": 6,
     "team": "batting"
 }, {
     "name": "Pick Off",
-    "value": 10,
+    "value": 7,
     "team": "fielding"
 }, {
     "name": "Walk",
-    "value": 11,
+    "value": 8,
     "team": "batting"
 }, {
     "name": "Blocked Run",
-    "value": 12,
+    "value": 9,
     "team": "fielding"
 }, {
     "name": "Strike Out",
-    "value": 13,
+    "value": 10,
     "team": "fielding"
 }, {
-    "name": "Hit",
-    "value": 14,
+    "name": "Hit by Pitch",
+    "value": 11,
     "team": "batting"
 }, {
     "name": "Home Run",
-    "value": 15,
+    "value": 12,
     "team": "batting"
 }, {
     "name": "Pitch Count: 16 & Under",
-    "value": 16,
+    "value": 13,
     "team": null
 }, {
     "name": "Pitch Count: 17 & Over",
-    "value": 17,
+    "value": 14,
     "team": null
 }, {
     "name": "Single",
-    "value": 18,
+    "value": 15,
     "team": "batting"
 }, {
     "name": "Double",
-    "value": 19,
+    "value": 16,
     "team": "batting"
 }, {
     "name": "Triple",
-    "value": 20,
+    "value": 17,
     "team": "batting"
 }, {
     "name": "Batter Count: 4 & Under",
-    "value": 21,
+    "value": 18,
     "team": null
 }, {
     "name": "Batter Count: 5 & Over",
-    "value": 22,
+    "value": 19,
     "team": null
 }, {
     "name": "Most Balls: Left Outfield",
-    "value": 23,
+    "value": 20,
     "team": null
 }, {
     "name": "Most Balls: Right Outfield",
-    "value": 24,
+    "value": 21,
     "team": null
 }, {
     "name": "Most Balls: Infield",
-    "value": 25,
+    "value": 22,
     "team": null
 }]
