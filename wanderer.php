@@ -27,7 +27,7 @@
           var msg = {
               section: parseInt(sectionIdInput.value) - 1,
               slection: 3,
-              method: "get"
+              method: "getFromWanderer"
           };
           ws.send(JSON.stringify(msg));
         }
@@ -51,7 +51,7 @@
       var msg = evt.data.split(" "); 
       console.log(evt.data);
 
-      if(msg[0] >= msg[1] && msg[0] >= msg[2])
+      if(msg[0] > msg[1] && msg[0] > msg[2])
             {       
                   console.log("red");  
                   document.body.style.backgroundColor = "red";
@@ -61,11 +61,17 @@
                   console.log("red");          
                   document.body.style.backgroundColor = "blue";
             }
-      else
+      else if(msg[2] > msg[0] && msg[2] > msg[1])
             {       
                   console.log("green");        
                   document.body.style.backgroundColor = "green";
             }
+	 else
+	 {
+		 console.log("white");        
+         document.body.style.backgroundColor = "white";
+	 }
+		  
 
       };
                         
