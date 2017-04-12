@@ -37,7 +37,7 @@
       var intervalID = setInterval(updateWanderer, 1000);
 
       // Create a WebSocket.
-      var ws = new WebSocket(url);
+      var ws = new WebSocket("ws://128.2.238.137:9000");
       ws.onopen = function()
       {
         // Web Socket is connected, send data using send()
@@ -47,7 +47,9 @@
                         
       ws.onmessage = function (evt) 
       { 
-      
+      if (evt.data == "plus10warmer" || evt.data == "plus10colder" || evt.data == "plus10plant") console.log("Ignoring the server side aggregate broadcast");
+      else
+      {
       var msg = evt.data.split(" "); 
       console.log(evt.data);
 
@@ -58,19 +60,20 @@
             }
       else if(msg[1] > msg[0] && msg[1] > msg[2])
             {       
-                  console.log("red");          
+                  console.log("blue");          
                   document.body.style.backgroundColor = "blue";
             }
       else if(msg[2] > msg[0] && msg[2] > msg[1])
             {       
-                  console.log("green");        
-                  document.body.style.backgroundColor = "green";
+                  console.log("yellow");        
+                  document.body.style.backgroundColor = "yellow";
             }
 	 else
 	 {
 		 console.log("white");        
          document.body.style.backgroundColor = "white";
 	 }
+      }
 		  
 
       };
