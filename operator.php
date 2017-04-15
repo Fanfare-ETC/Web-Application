@@ -71,40 +71,75 @@
       </div>
     </div>
     -->
-    <form id="play-tracker-form" method="post">
+    <div class="col-md-8">
+      <form id="play-tracker-form" method="post">
+        <div class="row text-center">
+          <div class="col-md-12">
+            <h2 class="page-header">Play Tracker</h2>
+          </div>
+        </div>
+        <div class="row text-left">
+          <!-- Populated in JS -->
+          <div class="col-md-6 play-category">
+            <div class="well">
+              <h3>Fielding</h3>
+              <div class="play-list play-list-fielding"></div>
+            </div>
+          </div>
+          <div class="col-md-6 play-category">
+            <div class="well">
+              <h3>Batting</h3>
+              <div class="play-list play-list-batting"></div>
+            </div>
+          </div>
+          <div class="col-md-6 play-category">
+            <div class="well">
+              <h3>Others</h3>
+              <div class="play-list play-list-null"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 text-center border-groove">
+            <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
+            <button type="button" class="btn btn-clear-predictions">Clear Predictions</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Updated in JS: populateGameControl -->
+    <div class="col-md-4 game-control">
       <div class="row text-center">
         <div class="col-md-12">
-          <h2 class="page-header">Play Tracker</h2>
+          <h2 class="page-header">Game Control</h2>
         </div>
       </div>
       <div class="row text-left">
-        <!-- Populated in JS -->
-        <div class="col-md-4 play-category">
+        <div class="col-md-12">
           <div class="well">
-            <h3>Fielding</h3>
-            <div class="play-list play-list-fielding"></div>
+            <div class="form-group">
+              <label for="state-inning">Current Inning</label>
+              <input type="number" class="form-control" id="state-inning" placeholder="None" required />
+            </div>
+            <div class="form-group">
+              <label for="state-half">Current Half</label>
+              <select id="state-half" class="form-control" required>
+                <option value="">None</option>
+                <option value="T">Top</option>
+                <option value="B">Bottom</option>
+              </select>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" id="state-break-active">Break Active</input>
+              </label>
+            </div>
+            <button id="state-apply" class="btn btn-primary" type="submit">Apply</button>
           </div>
         </div>
-        <div class="col-md-4 play-category">
-          <div class="well">
-            <h3>Batting</h3>
-            <div class="play-list play-list-batting"></div>
-          </div>
-        </div>
-        <div class="col-md-4 play-category">
-          <div class="well">
-            <h3>Others</h3>
-            <div class="play-list play-list-null"></div>
-          </div>
-        </div>
-      <div class="row">
-        <div class="col-md-12 text-center border-groove">
-          <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
-          <button type="button" class="btn btn-clear-predictions">Clear Predictions</button>		
-        </div>
-      </div>	 
-    </form>
-  </div>
+      </div>
+    </div>
 	  <button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
 		  <button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
 		  <br><br>
