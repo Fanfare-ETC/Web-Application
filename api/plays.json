@@ -51,11 +51,11 @@
     "value": 12,
     "team": "batting"
 }, {
-    "name": "Pitch Count: 16 & Under",
+    "name": "Pitch Count: 15 & Under",
     "value": 13,
     "team": null
 }, {
-    "name": "Pitch Count: 17 & Over",
+    "name": "Pitch Count: 16 & Over",
     "value": 14,
     "team": null
 }, {
