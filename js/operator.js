@@ -1,6 +1,10 @@
 (function () {
     // Operator interface globals.
     let connection = null;
+    let state = {
+        inning: null,
+        half: null
+    };
 
     // Fetch the list of plays from the server.
     const getPlays = function () {
@@ -103,11 +107,85 @@
             event: 'operator:clearPredictions'
         }));
     };
+
+    /**
+     * Initialize the game control section.
+     */
+    const initGameControl = function () {
+        /** @type {HTMLInputElement} */
+        const inningElem = document.getElementById('state-inning');
+        inningElem.addEventListener('change', function (e) {
+            const newValue = parseInt(e.target.value);
+            if (!isNaN(newValue)) {
+                state.inning = newValue;
+            } else {
+                console.log('Current inning input is invalid, ignoring!');
+            }
+        });
+
+        /** @type {HTMLSelectElement} */
+        const halfElem = document.getElementById('state-half');
+        halfElem.addEventListener('change', function (e) {
+            state.half = e.target.value;
+        });
+
+        /** @type {HTMLInputElement} */
+        const breakActiveElem = document.getElementById('state-break-active');
+        breakActiveElem.addEventListener('change', function (e) {
+            inningElem.disabled = e.target.checked;
+            inningElem.value = '';
+            halfElem.disabled = e.target.checked;
+            halfElem.value = '';
+
+            if (e.target.checked) {
+                state.inning = null;
+                state.half = null;
+            }
+        });
+
+        /** @type {HTMLButtonElement} */
+        const applyElem = document.getElementById('state-apply');
+        applyElem.addEventListener('click', function () {
+            if (state.inning === null || state.half === null) {
+                state.inning = null;
+                state.half = null;
+            }
+
+            connection.send(JSON.stringify({
+                event: 'operator:setState',
+                data: state
+            }));
+        });
+    };
     
-    //
+    // Populate game control section in the UI.
+    const populateGameControl = function () {
+        // A break is active if either is null.
+        if (state.inning === null || state.half === null) {
+            /** @type {HTMLInputElement} */
+            const breakActiveElem = document.getElementById('state-break-active');
+            breakActiveElem.checked = true;
+            breakActiveElem.dispatchEvent(new Event('change'));
+        } else {
+            /** @type {HTMLInputElement} */
+            const inningElem = document.getElementById('state-inning');
+            inningElem.value = state.inning;
+
+            /** @type {HTMLInputElement} */
+            const halfElem = document.getElementById('state-half');
+            halfElem.value = state.half;
+        }
+    };
 
     // Handlers for server messages.
     const messageHandlers = {
+        'server:state': (message) => {
+            Object.assign(state, message.data);
+            populateGameControl();
+        },
+        'server:stateChanged': (message) => {
+            toastr.success('Game state successfully applied!');
+        },
         'server:error': (message) => {
             toastr.error('The server reported an error.')
         },
@@ -125,6 +203,7 @@
     getPlays()
         .then(function (plays) {
             populatePlaysList(plays);
+            initGameControl();
 
             connection = new WebSocket(PLAYBOOK_NOTIFIER_URL);
             
@@ -141,6 +220,11 @@
                 
                 const start_th = document.getElementsByClassName('btn-clear-predictions')[0];
                 clearPredictionsBtn.addEventListener('click', clearPredictionsBtnHandler);
+
+                // Obtain the initial state.
+                connection.send(JSON.stringify({
+                    event: 'client:getState'
+                }));
             });
 
             connection.addEventListener('message', function (e) {

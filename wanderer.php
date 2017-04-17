@@ -37,7 +37,7 @@
       var intervalID = setInterval(updateWanderer, 1000);
 
       // Create a WebSocket.
-      var ws = new WebSocket("ws://128.2.238.137:9000");
+      var ws = new WebSocket(url);
       ws.onopen = function()
       {
         // Web Socket is connected, send data using send()
