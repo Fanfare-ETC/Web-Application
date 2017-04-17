@@ -47,7 +47,7 @@
                         
       ws.onmessage = function (evt) 
       { 
-      if (evt.data == "plus10warmer" || evt.data == "plus10colder" || evt.data == "plus10plant") console.log("Ignoring the server side aggregate broadcast");
+      if (evt.data == "plus10warmer" || evt.data == "plus10colder" || evt.data == "plus10plant" || evt.data == "flag1correct" || evt.data == "flag2correct" || evt.data == "flag3correct"  ) console.log("Ignoring the server side aggregate broadcast");
       else
       {
       var msg = evt.data.split(" "); 

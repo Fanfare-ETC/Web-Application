@@ -263,18 +263,52 @@
     };
     
      const start_thBtnHandler = function () {
-        document.getElementById("status_th").innerHTML = "<b><i> You STARTED the Hunt! It's in progress!<i> <b>";
+        //document.getElementById("status_th").innerHTML = "<b><i> You STARTED the Hunt! It's in progress!<i> <b>";
         console.log('Sending start signal');
         connection.send(JSON.stringify({
             method:'start'
         }));
     };
     const stop_thBtnHandler = function () {
-        document.getElementById("status_th").innerHTML = "<b><i> You STOPPED the Hunt! It's over!<i> <b>";
+        //document.getElementById("status_th").innerHTML = "<b><i> You STOPPED the Hunt! It's over!<i> <b>";
         console.log('Sending stop signal');
         connection.send(JSON.stringify({
             method:'stop'
         }));
+    };
+     const flagcorrect_thBtnHandler = function (e) {
+         
+        //console.log(e.target);
+        if(e.target.id === 'flag1'){
+            console.log('Flag1 correct pressed');
+            connection.send(JSON.stringify({
+            method:'flag1correct'
+        }));
+        }
+        else if (e.target.id === 'flag2')
+        { 
+           connection.send(JSON.stringify({
+            method:'flag2correct'
+        }));
+            console.log('Flag2 correct pressed');
+        }
+        else if(e.target.id === 'flag3')
+        {
+            connection.send(JSON.stringify({
+            method:'flag3correct'
+        }));
+            console.log('Flag3 correct pressed');
+        }
+        else {}
+        
+    };
+     const flagwrong_thBtnHandler = function (e) {
+         
+        if(e.target.id === 'flag1')console.log('Flag1 wrong pressed');
+        else if (e.target.id === 'flag2')console.log('Flag2 wrong pressed');
+        else if(e.target.id === 'flag3')console.log('Flag3 wrong pressed');
+        else {}
+        
     };
     // Operator interface globals.
     let connection = null;
@@ -282,14 +316,21 @@
     connection.addEventListener('open', function () {
                 console.log('Connected to WebSocket server at ' + connection.url);
         
-                const thwinnerForm = document.getElementById('thwinner-form');
-                thwinnerForm.addEventListener('submit', thwinnerFormHandler);
+                //const thwinnerForm = document.getElementById('thwinner-form');
+                //thwinnerForm.addEventListener('submit', thwinnerFormHandler);
         
                 const start_th = document.getElementsByClassName('btn-start-treasurehunt')[0];
                 start_th.addEventListener('click', start_thBtnHandler);
         
                 const stop_th = document.getElementsByClassName('btn-stop-treasurehunt')[0];
                 stop_th.addEventListener('click', stop_thBtnHandler);
+        
+                const flag_correct = Array.from(document.getElementsByClassName('btn-flag-correct'));
+                flag_correct.forEach(flag => flag.addEventListener('click', flagcorrect_thBtnHandler));
+        
+                const flag_wrong = Array.from(document.getElementsByClassName('btn-flag-wrong'));
+                flag_wrong.forEach(flag => flag.addEventListener('click', flagwrong_thBtnHandler));
+               
             });
     
 })();

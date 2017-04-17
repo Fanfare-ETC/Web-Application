@@ -47,7 +47,7 @@
 .play-list > div.checkbox > label {
     font-weight: bold;
 }
-.btn-flag-correct {background-color: #007f00;font-size: 16px;text-align: center;font-weight: bold;border-radius: 18px;padding: 5px 15px;color: white;} /* Green */
-.btn-flag-wrong {background-color: #bf3626;font-size: 16px;text-align: center;font-weight: bold;border-radius:18px;padding: 5px 15px;color: white;} /* Red */
-.btn-start-treasurehunt{background-color: #007f00;font-size: 18px;text-align: center;font-weight: bold;border-radius: 18px;padding: 5px 15px; color: white;}
-.btn-stop-treasurehunt{background-color: #bf3626;font-size: 18px;text-align: center;font-weight: bold;border-radius: 18px;padding: 5px 15px; color: white;}
+.btn-flag-correct {background-color: #007f00;font-size: 14px;text-align: center;font-weight: bold;border-radius: 12px;padding: 5px 15px;color: white;} /* Green */
+.btn-flag-wrong {background-color: #bf3626;font-size: 14px;text-align: center;font-weight: bold;border-radius:12px;padding: 5px 15px;color: white;} /* Red */
+.btn-start-treasurehunt{background-color: #007f00;font-size: 16.8px;text-align: center;font-weight: bold;border-radius: 12px;padding: 5px 15px; color: white;}
+.btn-stop-treasurehunt{background-color: #bf3626;font-size: 16.8px;text-align: center;font-weight: bold;border-radius: 12px;padding: 5px 15px; color: white;}

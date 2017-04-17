@@ -156,14 +156,14 @@
 	  	<button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
 		<button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
 	    <br><br>
-	    <button type="button" class="btn-flag-correct">Flag 1 - Correct</button>
-	    <button type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
+	    <button id= "flag1" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
+	    <button id= "flag1" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
 	    <br><br>
-	    <button type="button" class="btn-flag-correct">Flag 2 - Correct</button>
-	    <button type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
+	    <button id= "flag2" type="button" class="btn-flag-correct">Flag 2 - Correct</button>
+	    <button id= "flag2" type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
 	    <br><br>
-	    <button type="button" class="btn-flag-correct">Flag 3 - Correct</button>
-	    <button type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
+	    <button id= "flag3" type="button" class="btn-flag-correct">Flag 3 - Correct</button>
+	    <button id= "flag3" type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
 	    <br><br>
 
   <div class="vertical-seperator"></div>
