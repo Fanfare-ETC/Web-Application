@@ -138,7 +138,6 @@
             <button id="state-apply" class="btn btn-primary" type="submit">Apply</button>
           </div>
         </div>
-<<<<<<< HEAD
       <div class="row">
         <div class="col-md-12 text-center border-groove">
           <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
@@ -147,12 +146,13 @@
       </div>	 
     </form>
   </div>
-	   <br><br>
+	</div>
+	
 	      <div class="row text-center">
-        <div class="col-md-12">
+          <div class="col-md-12">
           <h2 class="page-header">Treasure Hunt</h2>
-        </div>
-      </div>
+         </div>
+         </div>
 	  	<button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
 		<button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
 	    <br><br>
@@ -165,22 +165,6 @@
 	    <button type="button" class="btn-flag-correct">Flag 3 - Correct</button>
 	    <button type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
 	    <br><br>
-=======
-      </div>
-    </div>
-	  <button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
-		  <button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
-		  <br><br>
-	      <p id="status_th"><b>Press Start/STop to begin TreasureHunt</b></p>
-	      <br><br>
->>>>>>> ba7ca2346e0f38d0340b6ab81d5f383051f02920
-		  <form id="thwinner-form" method="post">
-  			Enter Winner :<br>
- 			 <input id="winner" type="text" value="section1">
-  			<br><br>
-  			<input type="submit" name="formSubmit" value="Submit">
-		  </form> 
-	  
 
   <div class="vertical-seperator"></div>
   <div class = "container-fluid">
