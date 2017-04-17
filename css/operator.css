@@ -47,3 +47,7 @@
 .play-list > div.checkbox > label {
     font-weight: bold;
 }
+.btn-flag-correct {background-color: #4CAF50;font-size: 16px;text-align: center;font-weight: bold;border-radius: 25px;padding: 5px 15px;} /* Green */
+.btn-flag-wrong {background-color: #f44336;font-size: 16px;text-align: center;font-weight: bold;border-radius: 25px;padding: 5px 15px;} /* Red */
+.btn-start-treasurehunt{background-color: #4CAF50;font-size: 24px;text-align: center;font-weight: bold;border-radius: 25px;padding: 5px 15px;}
+.btn-stop-treasurehunt{background-color: #f44336;font-size: 24px;text-align: center;font-weight: bold;border-radius: 25px;padding: 5px 15px;}

@@ -105,17 +105,31 @@
       </div>	 
     </form>
   </div>
-	  <button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
-		  <button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
-		  <br><br>
-	      <p id="status_th"><b>Press Start/STop to begin TreasureHunt</b></p>
-	      <br><br>
+	   <br><br>
+	      <div class="row text-center">
+        <div class="col-md-12">
+          <h2 class="page-header">Treasure Hunt</h2>
+        </div>
+      </div>
+	  	<button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
+		<button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
+	    <br><br>
+	    <button type="button" class="btn-flag-correct">Flag 1 - Correct</button>
+	    <button type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
+	    <br><br>
+	    <button type="button" class="btn-flag-correct">Flag 2 - Correct</button>
+	    <button type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
+	    <br><br>
+	    <button type="button" class="btn-flag-correct">Flag 3 - Correct</button>
+	    <button type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
+	    <br><br>
 		  <form id="thwinner-form" method="post">
   			Enter Winner :<br>
  			 <input id="winner" type="text" value="section1">
   			<br><br>
   			<input type="submit" name="formSubmit" value="Submit">
 		  </form> 
+	  
 
   <div class="vertical-seperator"></div>
   <div class = "container-fluid">
