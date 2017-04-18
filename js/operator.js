@@ -280,6 +280,8 @@
          
         //console.log(e.target);
         if(e.target.id === 'flag1'){
+            document.getElementById('left-1-correct').removeAttribute('hidden');
+            document.getElementById('left-1-wrong').setAttribute('hidden', 'true');
             console.log('Flag1 correct pressed');
             connection.send(JSON.stringify({
             method:'flag1correct'
@@ -290,6 +292,8 @@
            connection.send(JSON.stringify({
             method:'flag2correct'
         }));
+            document.getElementById('left-2-correct').removeAttribute('hidden');
+            document.getElementById('left-2-wrong').setAttribute('hidden', 'true');
             console.log('Flag2 correct pressed');
         }
         else if(e.target.id === 'flag3')
@@ -297,6 +301,8 @@
             connection.send(JSON.stringify({
             method:'flag3correct'
         }));
+            document.getElementById('left-3-correct').removeAttribute('hidden');
+            document.getElementById('left-3-wrong').setAttribute('hidden', 'true');
             console.log('Flag3 correct pressed');
         }
         else {}
@@ -304,9 +310,21 @@
     };
      const flagwrong_thBtnHandler = function (e) {
          
-        if(e.target.id === 'flag1')console.log('Flag1 wrong pressed');
-        else if (e.target.id === 'flag2')console.log('Flag2 wrong pressed');
-        else if(e.target.id === 'flag3')console.log('Flag3 wrong pressed');
+        if(e.target.id === 'flag1'){
+            document.getElementById('left-1-wrong').removeAttribute('hidden');
+            document.getElementById('left-1-correct').setAttribute('hidden', 'true');
+            console.log('Flag1 wrong pressed');
+        }
+        else if (e.target.id === 'flag2'){
+            document.getElementById('left-2-wrong').removeAttribute('hidden');
+            document.getElementById('left-2-correct').setAttribute('hidden', 'true');
+            console.log('Flag2 wrong pressed');
+        }
+        else if(e.target.id === 'flag3'){
+            document.getElementById('left-3-wrong').removeAttribute('hidden');
+            document.getElementById('left-3-correct').setAttribute('hidden', 'true');
+            console.log('Flag3 wrong pressed');
+        }
         else {}
         
     };
