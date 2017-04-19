@@ -279,24 +279,28 @@
      const flagcorrect_thBtnHandler = function (e) {
          
         //console.log(e.target);
-        if(e.target.id === 'flag1'){
+        if(e.target.id === 'flag1-correct'){
             document.getElementById('left-1-correct').removeAttribute('hidden');
             document.getElementById('left-1-wrong').setAttribute('hidden', 'true');
+            document.getElementById('flag2-correct').removeAttribute('hidden');
+            document.getElementById('flag2-wrong').removeAttribute('hidden');
             console.log('Flag1 correct pressed');
             connection.send(JSON.stringify({
             method:'flag1correct'
         }));
         }
-        else if (e.target.id === 'flag2')
+        else if (e.target.id === 'flag2-correct')
         { 
            connection.send(JSON.stringify({
             method:'flag2correct'
         }));
             document.getElementById('left-2-correct').removeAttribute('hidden');
             document.getElementById('left-2-wrong').setAttribute('hidden', 'true');
+            document.getElementById('flag3-correct').removeAttribute('hidden');
+            document.getElementById('flag3-wrong').removeAttribute('hidden');
             console.log('Flag2 correct pressed');
         }
-        else if(e.target.id === 'flag3')
+        else if(e.target.id === 'flag3-correct')
         {
             connection.send(JSON.stringify({
             method:'flag3correct'
@@ -310,17 +314,17 @@
     };
      const flagwrong_thBtnHandler = function (e) {
          
-        if(e.target.id === 'flag1'){
+        if(e.target.id === 'flag1-wrong'){
             document.getElementById('left-1-wrong').removeAttribute('hidden');
             document.getElementById('left-1-correct').setAttribute('hidden', 'true');
             console.log('Flag1 wrong pressed');
         }
-        else if (e.target.id === 'flag2'){
+        else if (e.target.id === 'flag2-wrong'){
             document.getElementById('left-2-wrong').removeAttribute('hidden');
             document.getElementById('left-2-correct').setAttribute('hidden', 'true');
             console.log('Flag2 wrong pressed');
         }
-        else if(e.target.id === 'flag3'){
+        else if(e.target.id === 'flag3-wrong'){
             document.getElementById('left-3-wrong').removeAttribute('hidden');
             document.getElementById('left-3-correct').setAttribute('hidden', 'true');
             console.log('Flag3 wrong pressed');

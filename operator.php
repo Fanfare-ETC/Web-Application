@@ -158,53 +158,34 @@
             <div class="well">
               <h3>Section 1</h3>
               <div class="buttons">
-                <button id= "flag1" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
-	              <button id= "flag1" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
+                <button id= "flag1-correct" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
+	              <button id= "flag1-wrong" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
                 <img hidden align="right" id="left-1-correct" src="images/approved.png" width="8%" height="8%"/>
                 <img hidden align="right" id="left-1-wrong" src="images/declined.png" width="8.5%" height="8.5%"/>
 	              <br><br>
-                <button id= "flag2" type="button" class="btn-flag-correct">Flag 2 - Correct</button>
-                <button id= "flag2" type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
+                <button hidden id= "flag2-correct" type="button" class="btn-flag-correct">Flag 2 - Correct</button>
+                <button hidden id= "flag2-wrong" type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
                 <img hidden align="right" id="left-2-correct" src="images/approved.png" width="8%" height="8%"/>
                 <img hidden align="right" id="left-2-wrong" src="images/declined.png" width="8.5%" height="8.5%"/>
                 <br><br>
-                <button id= "flag3" type="button" class="btn-flag-correct">Flag 3 - Correct</button>
-                <button id= "flag3" type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
+                <button hidden id= "flag3-correct" type="button" class="btn-flag-correct">Flag 3 - Correct</button>
+                <button hidden id= "flag3-wrong" type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
                 <img hidden align="right" id="left-3-correct" src="images/approved.png" width="8%" height="8%"/>
                 <img hidden align="right" id="left-3-wrong" src="images/declined.png" width="8.5%" height="8.5%"/>
                 <br><br>
                </div>
             </div>
-          </div>
-          <div class="col-md-6 team-right">
-            <div class="well">
-              <h3>Section 2</h3>
-              <div class="buttons"> 
-                <button id= "flag1" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
-	              <button id= "flag1" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
-                <img hidden align="right" id="right-1-correct" src="images/approved.png" width="8%" height="8%"/>
-                <img hidden align="right" id="right-1-wrong" src="images/declined.png" width="8.5%" height="8.5%"/>
-	              <br><br>
-                <button id= "flag2" type="button" class="btn-flag-correct">Flag 2 - Correct</button>
-                <button id= "flag2" type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
-                <img hidden align="right" id="right-2-correct" src="images/approved.png" width="8%" height="8%"/>
-                <img hidden align="right" id="right-2-wrong" src="images/declined.png" width="8.5%" height="8.5%"/>
-                <br><br>
-                <button id= "flag3" type="button" class="btn-flag-correct">Flag 3 - Correct</button>
-                <button id= "flag3" type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
-                <img hidden align="right" id="right-3-correct" src="images/approved.png" width="8%" height="8%"/>
-                <img hidden align="right" id="right-3-wrong" src="images/declined.png" width="8.5%" height="8.5%"/>
-                <br><br>
-                </div>
-            </div>
-          </div>
-          <div class="row">
+    <div class="row">
             <div class="col-md-12 text-right border-groove">
               <button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
               <button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
               <br><br>
             </div>
            </div>
+
+          </div>
+    </div>
+      
 
   <div class="vertical-seperator"></div>
   <div class = "container-fluid">
