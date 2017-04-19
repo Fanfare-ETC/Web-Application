@@ -5,10 +5,13 @@
 <body>
   <input id="section-id" type="text" placeholder="Section ID" />
 
-  <br></br>
+  <br><br>
   <div id="sse">
     <a id="getaggregate" type="button" href="#">Get Aggregate!</a>
+    <br><br>
+    <p id="status" >Keep going!</p>
   </div>
+  
 
   <script type="text/javascript">
   if ("WebSocket" in window) {
@@ -47,9 +50,22 @@
                         
       ws.onmessage = function (evt) 
       { 
-      if (evt.data == "plus10warmer" || evt.data == "plus10colder" || evt.data == "plus10plant" || evt.data == "flag1correct" || evt.data == "flag2correct" || evt.data == "flag3correct"  ) console.log("Ignoring the server side aggregate broadcast");
+      if (evt.data == "plus10warmer" || evt.data == "plus10colder" || evt.data == "plus10plant" ) console.log("Ignoring the server side aggregate broadcast");
+      else if ( evt.data == "flag1correct" || evt.data == "flag2correct" || evt.data == "flag3correct")
+      {
+        console.log(evt.data);
+        document.getElementById('status').innerHTML= "GOOD JOB! Go for the next one!";
+      }
+      else if( evt.data == "flag1wrong" || evt.data == "flag2wrong" || evt.data == "flag3wrong")
+      {
+        console.log(evt.data);
+        document.getElementById('status').innerHTML="You dropped the marker at the wrong place! TRY AGAIN!";
+      }
       else
       {
+        
+      //document.getElementById('status').innerHTML="Keep Going!";
+        
       var msg = evt.data.split(" "); 
       console.log(evt.data);
 
