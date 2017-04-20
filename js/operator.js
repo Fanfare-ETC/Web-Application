@@ -267,6 +267,18 @@
         console.log('Sending start signal');
         document.getElementById('flag1-correct').removeAttribute('hidden');
         document.getElementById('flag1-wrong').removeAttribute('hidden');
+
+        const flag_correct = Array.from(document.getElementsByClassName('btn-flag-correct'));
+        flag_correct.forEach(flag => flag.addEventListener('click', flagcorrect_thBtnHandler));
+        
+        const flag_wrong = Array.from(document.getElementsByClassName('btn-flag-wrong'));
+        flag_wrong.forEach(flag => flag.addEventListener('click', flagwrong_thBtnHandler));
+
+         Array.from(document.getElementsByClassName('btn-flag-correct'))
+        .forEach(flag => flag.style.background = '#007F00');
+        Array.from(document.getElementsByClassName('btn-flag-wrong'))
+        .forEach(flag => flag.style.background = '#BF3626');
+
         connection.send(JSON.stringify({
             method:'start'
         }));
@@ -294,6 +306,10 @@
             document.getElementById('left-1-wrong').setAttribute('hidden', 'true');
             document.getElementById('flag2-correct').removeAttribute('hidden');
             document.getElementById('flag2-wrong').removeAttribute('hidden');
+            document.getElementById('flag1-correct').removeEventListener('click', flagcorrect_thBtnHandler);
+            document.getElementById('flag1-wrong').removeEventListener('click', flagwrong_thBtnHandler);
+            document.getElementById('flag1-correct').style.background = '#5E925E';
+            document.getElementById('flag1-wrong').style.background = '#AE6C65';
             console.log('Flag1 correct pressed');
             connection.send(JSON.stringify({
             method:'flag1correct'
@@ -308,7 +324,11 @@
             document.getElementById('left-2-wrong').setAttribute('hidden', 'true');
             document.getElementById('flag3-correct').removeAttribute('hidden');
             document.getElementById('flag3-wrong').removeAttribute('hidden');
-            console.log('Flag2 correct pressed');
+            document.getElementById('flag2-correct').removeEventListener('click', flagcorrect_thBtnHandler);
+            document.getElementById('flag2-wrong').removeEventListener('click', flagwrong_thBtnHandler);
+            document.getElementById('flag2-correct').style.background = '#5E925E';
+            document.getElementById('flag2-wrong').style.background = '#AE6C65';
+            console.log('Flag2 correct pressed right');
         }
         else if(e.target.id === 'flag3-correct')
         {
@@ -317,6 +337,10 @@
         }));
             document.getElementById('left-3-correct').removeAttribute('hidden');
             document.getElementById('left-3-wrong').setAttribute('hidden', 'true');
+            document.getElementById('flag3-correct').removeEventListener('click', flagcorrect_thBtnHandler);
+             document.getElementById('flag3-wrong').removeEventListener('click', flagwrong_thBtnHandler);
+             document.getElementById('flag3-correct').style.background = '#5E925E';
+            document.getElementById('flag3-wrong').style.background = '#AE6C65';
             console.log('Flag3 correct pressed');
         }
         else {}
