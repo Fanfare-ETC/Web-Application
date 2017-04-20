@@ -161,26 +161,40 @@
 
                 <button hidden id= "flag1-correct" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
 	              <button hidden id= "flag1-wrong" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
-                <img hidden align="right" id="left-1-correct" class="btn-flag-correct-img" src="images/approved.png" width="8%" height="8%"/>
-                <img hidden align="right" id="left-1-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="8.5%" height="8.5%"/>
+                <img hidden align="right" id="left-1-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
+                <img hidden align="right" id="left-1-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="5%" height="5%"/>
 	              <br><br>
                 <button hidden id= "flag2-correct" type="button" class="btn-flag-correct">Flag 2 - Correct</button>
                 <button hidden id= "flag2-wrong" type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
-                <img hidden align="right" id="left-2-correct" class="btn-flag-correct-img" src="images/approved.png" width="8%" height="8%"/>
-                <img hidden align="right" id="left-2-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="8.5%" height="8.5%"/>
+                <img hidden align="right" id="left-2-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
+                <img hidden align="right" id="left-2-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="5%" height="5%"/>
                 <br><br>
                 <button hidden id= "flag3-correct" type="button" class="btn-flag-correct">Flag 3 - Correct</button>
                 <button hidden id= "flag3-wrong" type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
-                <img hidden align="right" id="left-3-correct" class="btn-flag-correct-img" src="images/approved.png" width="8%" height="8%"/>
-                <img hidden align="right" id="left-3-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="8.5%" height="8.5%"/>
+                <img hidden align="right" id="left-3-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
+                <img hidden align="right" id="left-3-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="5%" height="5%"/>
 
                 <br><br>
                </div>
             </div>
-    <div class="row">
+            
+              
+            <div class="well">
+              <h3>Map Reference</h3>
+              <img align="right" id="img" class="final-img" src="images/crane.png" width="100%" height="100%"/>
+               <br><br>
+                <br><br> 
+                <br><br>
+                 <br><br>
+                  <br><br>
+                   <br><br>
+                    <br><br>
+              </div>
+            
+        <div class="row">
             <div class="col-md-12 text-right border-groove">
-              <button type="button" class="btn-start-treasurehunt">Start TreasureHunt </button>
-              <button type="button" class="btn-stop-treasurehunt">Stop TreasureHunt</button>
+              <button type="button" class="btn-start-treasurehunt">Start Connect the Dots! </button>
+              <button type="button" class="btn-stop-treasurehunt">Stop Connect the Dots!</button>
               <br><br>
             </div>
            </div>
