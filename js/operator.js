@@ -328,16 +328,25 @@
             document.getElementById('left-1-wrong').removeAttribute('hidden');
             document.getElementById('left-1-correct').setAttribute('hidden', 'true');
             console.log('Flag1 wrong pressed');
+            connection.send(JSON.stringify({
+            method:'flag1wrong'
+        }));
         }
         else if (e.target.id === 'flag2-wrong'){
             document.getElementById('left-2-wrong').removeAttribute('hidden');
             document.getElementById('left-2-correct').setAttribute('hidden', 'true');
             console.log('Flag2 wrong pressed');
+            connection.send(JSON.stringify({
+            method:'flag2wrong'
+        }));
         }
         else if(e.target.id === 'flag3-wrong'){
             document.getElementById('left-3-wrong').removeAttribute('hidden');
             document.getElementById('left-3-correct').setAttribute('hidden', 'true');
             console.log('Flag3 wrong pressed');
+            connection.send(JSON.stringify({
+            method:'flag3wrong'
+        }));
         }
         else {}
         

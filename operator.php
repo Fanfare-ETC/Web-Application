@@ -158,6 +158,7 @@
             <div class="well">
               <h3>Section 1</h3>
               <div class="buttons">
+
                 <button hidden id= "flag1-correct" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
 	              <button hidden id= "flag1-wrong" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
                 <img hidden align="right" id="left-1-correct" class="btn-flag-correct-img" src="images/approved.png" width="8%" height="8%"/>
@@ -172,6 +173,7 @@
                 <button hidden id= "flag3-wrong" type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
                 <img hidden align="right" id="left-3-correct" class="btn-flag-correct-img" src="images/approved.png" width="8%" height="8%"/>
                 <img hidden align="right" id="left-3-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="8.5%" height="8.5%"/>
+
                 <br><br>
                </div>
             </div>
