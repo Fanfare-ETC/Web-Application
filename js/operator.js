@@ -294,6 +294,8 @@
             document.getElementById('left-1-wrong').setAttribute('hidden', 'true');
             document.getElementById('flag2-correct').removeAttribute('hidden');
             document.getElementById('flag2-wrong').removeAttribute('hidden');
+            document.getElementById('flag1-correct').removeEventListener('click', flagcorrect_thBtnHandler);
+             document.getElementById('flag1-wrong').removeEventListener('click', flagwrong_thBtnHandler);
             console.log('Flag1 correct pressed');
             connection.send(JSON.stringify({
             method:'flag1correct'
@@ -308,7 +310,9 @@
             document.getElementById('left-2-wrong').setAttribute('hidden', 'true');
             document.getElementById('flag3-correct').removeAttribute('hidden');
             document.getElementById('flag3-wrong').removeAttribute('hidden');
-            console.log('Flag2 correct pressed');
+            document.getElementById('flag2-correct').removeEventListener('click', flagcorrect_thBtnHandler);
+            document.getElementById('flag2-wrong').removeEventListener('click', flagwrong_thBtnHandler);
+            console.log('Flag2 correct pressed right');
         }
         else if(e.target.id === 'flag3-correct')
         {
@@ -317,6 +321,8 @@
         }));
             document.getElementById('left-3-correct').removeAttribute('hidden');
             document.getElementById('left-3-wrong').setAttribute('hidden', 'true');
+            document.getElementById('flag3-correct').removeEventListener('click', flagcorrect_thBtnHandler);
+             document.getElementById('flag3-wrong').removeEventListener('click', flagwrong_thBtnHandler);
             console.log('Flag3 correct pressed');
         }
         else {}
