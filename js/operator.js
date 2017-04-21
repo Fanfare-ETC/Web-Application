@@ -101,6 +101,13 @@
         }));
     };
 
+    // Lock predictions button callback.
+    const lockPredictionsBtnHandler = function () {
+        connection.send(JSON.stringify({
+            event: 'operator:lockPredictions'
+        }));
+    };
+
     // Clear predictions button callback.
     const clearPredictionsBtnHandler = function () {
         connection.send(JSON.stringify({
@@ -217,9 +224,9 @@
                 // Listen on clear predictions button.
                 const clearPredictionsBtn = document.getElementsByClassName('btn-clear-predictions')[0];
                 clearPredictionsBtn.addEventListener('click', clearPredictionsBtnHandler);
-                
-                const start_th = document.getElementsByClassName('btn-clear-predictions')[0];
-                clearPredictionsBtn.addEventListener('click', clearPredictionsBtnHandler);
+
+                const lockPredictionsBtn = document.getElementsByClassName('btn-lock-predictions')[0];
+                lockPredictionsBtn.addEventListener('click', lockPredictionsBtnHandler);
 
                 // Obtain the initial state.
                 connection.send(JSON.stringify({

@@ -34,43 +34,6 @@
     </div>
   </div>
   <div class="container">
-    <!--
-    <div class = "leftbar">
-        <div class="row text-center">
-          <div class="col-md-6 border-groove col-lg-12">Video Capture</div>
-        </div>
-        <div class="row text-left">
-          <div class="col-md-6 col-md-offset-3 col-lg-offset-0 border-groove col-lg-12"> <div class="videodiv"><video autoplay src="http://raspi3-02.etc.cmu.edu:8080/camera"></video></div></div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 text-center border-groove col-lg-12">Snapshot Button Goes Here</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 text-center col-lg-11"> </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-lg-5 border-groove">Crowd Simon</div>
-          <div class="col-lg-1">&nbsp;</div>
-          <div class="border-groove col-lg-6">Leaderboard</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-5 text-center border-groove">Start Button</div>
-          <div class="col-lg-1">&nbsp;</div>
-          <div class="col-lg-3 text-center border-groove" >Simon</div>
-          <div class="col-lg-3 text-center border-groove" >Playbook</div>
-      </div>
-      <div class="row">
-          <div class="col-lg-5 text-center border-groove">Stop Button</div>
-          <div class="col-lg-1">&nbsp;</div>
-          <div class="col-lg-3 text-center border-groove" >Top Score</div>
-        <div class="col-lg-3 text-center border-groove" >Top Score</div>
-      </div>
-      <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="text-center border-groove col-lg-6" >Stadium Overlay Button</div>
-      </div>
-    </div>
-    -->
     <div class="col-md-8">
       <form id="play-tracker-form" method="post">
         <div class="row text-center">
@@ -102,7 +65,6 @@
         <div class="row">
           <div class="col-md-8 text-center border-groove">
             <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
-            <button type="button" class="btn btn-clear-predictions">Clear Predictions</button>
           </div>
         </div>
       </form>
@@ -132,21 +94,32 @@
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" id="state-break-active">Break Active</input>
+                <input type="checkbox" id="state-break-active" />Break Active
               </label>
             </div>
             <button id="state-apply" class="btn btn-primary" type="submit">Apply</button>
           </div>
         </div>
-      <div class="row">
-        <div class="col-md-12 text-center border-groove">
-          <input class="btn btn-primary" type="submit" name="formSubmit" value="Submit">
-          <button type="button" class="btn btn-clear-predictions">Clear Predictions</button>		
+      </div>
+
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h2 class="page-header">Prediction Control</h2>
         </div>
-      </div>	 
-    </form>
-  </div>
-	</div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <div class="well">
+            <button type="button" class="btn btn-warning btn-lock-predictions">
+              <span class="glyphicon glyphicon-lock"></span> Lock Predictions
+            </button>
+            <button type="button" class="btn btn-danger btn-clear-predictions">
+              <span class="glyphicon glyphicon-remove"></span> Clear Predictions
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 	
 	      <div class="row text-center">
           <div class="col-md-12">
