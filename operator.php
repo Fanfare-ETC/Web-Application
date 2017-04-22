@@ -118,7 +118,24 @@
             </button>
           </div>
         </div>
+
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h2 class="page-header">Leaderboard Control</h2>
+        </div>
       </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <div class="well">
+            <button type="button" class="btn btn-danger btn-clear-leaderboard">
+              <span class="glyphicon glyphicon-remove"></span> Clear Leaderboard
+            </button>
+          </div>
+        </div>
+      </div>
+
+  
+</div>
     </div>
 	
 	      <div class="row text-center">
@@ -192,10 +209,13 @@
     <?php
     $playbook_notifier_host = isset($_ENV['PLAYBOOK_NOTIFIER_HOST']) ? $_ENV['PLAYBOOK_NOTIFIER_HOST'] : 'localhost';
     $playbook_notifier_port = isset($_ENV['PLAYBOOK_NOTIFIER_PORT']) ? $_ENV['PLAYBOOK_NOTIFIER_PORT'] : 9001;
-	$treasurehunt_host = isset($_ENV['TREASUREHUNT_HOST']) ? $_ENV['TREASUREHUNT_HOST'] : 'localhost';
+	  $treasurehunt_host = isset($_ENV['TREASUREHUNT_HOST']) ? $_ENV['TREASUREHUNT_HOST'] : 'localhost';
     $treasurehunt_port = isset($_ENV['TREASUREHUNT_PORT']) ? $_ENV['TREASUREHUNT_PORT'] : 9000;
+    $leaderboard_host = isset($_ENV['LEADERBOARD_HOST']) ? $_ENV['LEADERBOARD_HOST'] : 'localhost';
+    $leaderboard_port = isset($_ENV['LEADERBOARD_PORT']) ? $_ENV['LEADERBOARD_PORT'] : 9002;
+    echo "const LEADERBOARD_URL = 'http://${leaderboard_host}:${leaderboard_port}';\n";
     echo "const PLAYBOOK_NOTIFIER_URL = 'ws://${playbook_notifier_host}:${playbook_notifier_port}';\n";
-	echo "const TREASUREHUNT_URL = 'ws://${treasurehunt_host}:${treasurehunt_port}';\n";
+	  echo "const TREASUREHUNT_URL = 'ws://${treasurehunt_host}:${treasurehunt_port}';\n";
     ?>
   </script>
   <!-- Include all compiled plugins (below), or include individual files as needed --> 
