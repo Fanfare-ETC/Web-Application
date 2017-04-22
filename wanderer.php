@@ -81,32 +81,32 @@
       
       if(page.flag1===true && page.flag2===false && page.flag3===false)
       {
-         document.getElementById('flag1').innerHTML="Flag 1";
+         document.getElementById('flag1').innerHTML="Marker-1";
          document.getElementById('flagstatus1').src="../images/approved.png";
       }
       if(page.flag1===false && page.flag2===false && page.flag3===false)
       {
-        document.getElementById('flag1').innerHTML="Flag 1";
+        document.getElementById('flag1').innerHTML="Marker-1";
        document.getElementById('flagstatus1').src="../images/declined.png";
       }
       if(page.flag2===true && page.flag1===true && page.flag3===false)
       {
-         document.getElementById('flag2').innerHTML="Flag 2";
+         document.getElementById('flag2').innerHTML="Marker-2";
          document.getElementById('flagstatus2').src="../images/approved.png";
       }
       if(page.flag2===false && page.flag1===true && page.flag3===false)
       {
-         document.getElementById('flag2').innerHTML="Flag 2";
+         document.getElementById('flag2').innerHTML="Marker-2";
          document.getElementById('flagstatus2').src="../images/declined.png";
       }
       if(page.flag3===true && page.flag2===true && page.flag1===true)
       {
-         document.getElementById('flag3').innerHTML="Flag 3";
+         document.getElementById('flag3').innerHTML="Marker-3";
          document.getElementById('flagstatus3').src="../images/approved.png";
       }
       if(page.flag3===false && page.flag2===true && page.flag1===true)
       {
-         document.getElementById('flag3').innerHTML="Flag 3";
+         document.getElementById('flag3').innerHTML="Marker-3";
          document.getElementById('flagstatus3').src="../images/declined.png";
       }
       
