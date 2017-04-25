@@ -123,7 +123,7 @@
 	
 	      <div class="row text-center">
           <div class="col-md-12">
-          <h2 class="page-header">Treasure Hunt</h2>
+          <h2 class="page-header">Connect The Dots</h2>
          </div>
          </div>
      
