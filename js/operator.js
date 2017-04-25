@@ -390,7 +390,7 @@
     };
     // Operator interface globals.
     let connection = null;
-    connection = new WebSocket(TREASUREHUNT_URL);
+    connection = new WebSocket(TREASUREHUNT_1_URL);
     connection.addEventListener('open', function () {
                 console.log('Connected to WebSocket server at ' + connection.url);
         

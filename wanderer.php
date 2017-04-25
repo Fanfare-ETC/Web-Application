@@ -29,15 +29,18 @@
 <script type="text/javascript">
       if ("WebSocket" in window) {
       <?php
-      $treasurehunt_host = isset($_ENV['TREASUREHUNT_HOST']) ? $_ENV['TREASUREHUNT_HOST'] : 'localhost';
-      $treasurehunt_port = isset($_ENV['TREASUREHUNT_PORT']) ? $_ENV['TREASUREHUNT_PORT'] : 9000;
-      echo "const url = 'ws://${treasurehunt_host}:${treasurehunt_port}';\n";
+      $treasurehunt_1_host = isset($_ENV['TREASUREHUNT_1_HOST']) ? $_ENV['TREASUREHUNT_1_HOST'] : 'localhost';
+      $treasurehunt_1_port = isset($_ENV['TREASUREHUNT_1_PORT']) ? $_ENV['TREASUREHUNT_1_PORT'] : 9000;
+      $treasurehunt_2_host = isset($_ENV['TREASUREHUNT_2_HOST']) ? $_ENV['TREASUREHUNT_2_HOST'] : 'localhost';
+      $treasurehunt_2_port = isset($_ENV['TREASUREHUNT_2_PORT']) ? $_ENV['TREASUREHUNT_2_PORT'] : 9003;
+      echo "const treasurehunt_1_url = 'ws://${treasurehunt_1_host}:${treasurehunt_1_port}';\n";
+      echo "const treasurehunt_2_url = 'ws://${treasurehunt_2_host}:${treasurehunt_2_port}';\n";
       ?>
 
       const getAggregate = function () {
         
       // Create a WebSocket.
-      var ws = new WebSocket(url);
+      var ws = new WebSocket(treasurehunt_1_url);
       ws.onopen = function()
       {
        // console.log('ws.onopen');

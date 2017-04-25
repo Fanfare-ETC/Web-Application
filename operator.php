@@ -134,26 +134,26 @@
         </div>
       </div>
 
-  
+
 </div>
     </div>
-	
-	      <div class="row text-center">
+
+        <div class="row text-center">
           <div class="col-md-12">
           <h2 class="page-header">Treasure Hunt</h2>
          </div>
          </div>
-     
+
        <div class="col-md-6 team-left">
             <div class="well">
               <h3>Section 1</h3>
               <div class="buttons">
 
                 <button hidden id= "flag1-correct" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
-	              <button hidden id= "flag1-wrong" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
+                <button hidden id= "flag1-wrong" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
                 <img hidden align="right" id="left-1-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
                 <img hidden align="right" id="left-1-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="5%" height="5%"/>
-	              <br><br>
+                <br><br>
                 <button hidden id= "flag2-correct" type="button" class="btn-flag-correct">Flag 2 - Correct</button>
                 <button hidden id= "flag2-wrong" type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
                 <img hidden align="right" id="left-2-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
@@ -167,20 +167,20 @@
                 <br><br>
                </div>
             </div>
-            
-              
+
+
             <div class="well">
               <h3>Map Reference</h3>
               <img align="right" id="img" class="final-img" src="images/crane.png" width="100%" height="100%"/>
                <br><br>
-                <br><br> 
+                <br><br>
                 <br><br>
                  <br><br>
                   <br><br>
                    <br><br>
                     <br><br>
               </div>
-            
+
         <div class="row">
             <div class="col-md-12 text-right border-groove">
               <button type="button" class="btn-start-treasurehunt">Start Connect the Dots! </button>
@@ -191,7 +191,7 @@
 
           </div>
     </div>
-      
+
 
   <div class="vertical-seperator"></div>
   <div class = "container-fluid">
@@ -201,7 +201,7 @@
       </div>
   </div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
@@ -209,16 +209,19 @@
     <?php
     $playbook_notifier_host = isset($_ENV['PLAYBOOK_NOTIFIER_HOST']) ? $_ENV['PLAYBOOK_NOTIFIER_HOST'] : 'localhost';
     $playbook_notifier_port = isset($_ENV['PLAYBOOK_NOTIFIER_PORT']) ? $_ENV['PLAYBOOK_NOTIFIER_PORT'] : 9001;
-	  $treasurehunt_host = isset($_ENV['TREASUREHUNT_HOST']) ? $_ENV['TREASUREHUNT_HOST'] : 'localhost';
-    $treasurehunt_port = isset($_ENV['TREASUREHUNT_PORT']) ? $_ENV['TREASUREHUNT_PORT'] : 9000;
+    $treasurehunt_1_host = isset($_ENV['TREASUREHUNT_1_HOST']) ? $_ENV['TREASUREHUNT_1_HOST'] : 'localhost';
+    $treasurehunt_1_port = isset($_ENV['TREASUREHUNT_1_PORT']) ? $_ENV['TREASUREHUNT_1_PORT'] : 9000;
+    $treasurehunt_2_host = isset($_ENV['TREASUREHUNT_2_HOST']) ? $_ENV['TREASUREHUNT_2_HOST'] : 'localhost';
+    $treasurehunt_2_port = isset($_ENV['TREASUREHUNT_2_PORT']) ? $_ENV['TREASUREHUNT_2_PORT'] : 9003;
     $leaderboard_host = isset($_ENV['LEADERBOARD_HOST']) ? $_ENV['LEADERBOARD_HOST'] : 'localhost';
     $leaderboard_port = isset($_ENV['LEADERBOARD_PORT']) ? $_ENV['LEADERBOARD_PORT'] : 9002;
     echo "const LEADERBOARD_URL = 'http://${leaderboard_host}:${leaderboard_port}';\n";
     echo "const PLAYBOOK_NOTIFIER_URL = 'ws://${playbook_notifier_host}:${playbook_notifier_port}';\n";
-	  echo "const TREASUREHUNT_URL = 'ws://${treasurehunt_host}:${treasurehunt_port}';\n";
+    echo "const TREASUREHUNT_1_URL = 'ws://${treasurehunt_1_host}:${treasurehunt_1_port}';\n";
+    echo "const TREASUREHUNT_2_URL = 'ws://${treasurehunt_2_host}:${treasurehunt_2_port}';\n";
     ?>
   </script>
-  <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.js"></script>
   <script src="js/operator.js"></script>
 </body>
