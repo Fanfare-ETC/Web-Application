@@ -305,6 +305,21 @@
             method:'stop'
         }));
     };
+    const reset_thBtnHandler = function () {
+        //document.getElementById("status_th").innerHTML = "<b><i> You STOPPED the Hunt! It's over!<i> <b>";
+        console.log('Sending reset signal');
+        Array.from(document.getElementsByClassName('btn-flag-correct'))
+        .forEach(flag => flag.setAttribute('hidden', 'true'));
+        Array.from(document.getElementsByClassName('btn-flag-wrong'))
+        .forEach(flag => flag.setAttribute('hidden', 'true'));
+        Array.from(document.getElementsByClassName('btn-flag-correct-img'))
+        .forEach(flag => flag.setAttribute('hidden', 'true'));
+        Array.from(document.getElementsByClassName('btn-flag-wrong-img'))
+        .forEach(flag => flag.setAttribute('hidden', 'true'));
+        connection.send(JSON.stringify({
+            method:'reset'
+        }));
+    };
      const flagcorrect_thBtnHandler = function (e) {
          
         //console.log(e.target);
@@ -397,11 +412,14 @@
                 //const thwinnerForm = document.getElementById('thwinner-form');
                 //thwinnerForm.addEventListener('submit', thwinnerFormHandler);
         
-                const start_th = document.getElementsByClassName('btn-start-treasurehunt')[0];
+                const start_th = document.getElementsByClassName('btn-start')[0];
                 start_th.addEventListener('click', start_thBtnHandler);
         
-                const stop_th = document.getElementsByClassName('btn-stop-treasurehunt')[0];
+                const stop_th = document.getElementsByClassName('btn-stop')[0];
                 stop_th.addEventListener('click', stop_thBtnHandler);
+        
+                const reset_th = document.getElementsByClassName('btn-reset')[0];
+                reset_th.addEventListener('click', reset_thBtnHandler);
         
                 const flag_correct = Array.from(document.getElementsByClassName('btn-flag-correct'));
                 flag_correct.forEach(flag => flag.addEventListener('click', flagcorrect_thBtnHandler));
