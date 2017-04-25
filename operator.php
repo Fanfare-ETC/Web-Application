@@ -183,8 +183,10 @@
             
         <div class="row">
             <div class="col-md-12 text-right border-groove">
-              <button type="button" class="btn-start-treasurehunt">Start Connect the Dots! </button>
-              <button type="button" class="btn-stop-treasurehunt">Stop Connect the Dots!</button>
+              <button type="button" class="btn-start">Start Connect the Dots! </button>
+              <button type="button" class="btn-stop">Stop Connect the Dots!</button>
+			  <br><br>
+			  <button type="button" class="btn-reset">Reset to default</button>
               <br><br>
             </div>
            </div>

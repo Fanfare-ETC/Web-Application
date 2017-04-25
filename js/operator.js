@@ -397,10 +397,10 @@
                 //const thwinnerForm = document.getElementById('thwinner-form');
                 //thwinnerForm.addEventListener('submit', thwinnerFormHandler);
         
-                const start_th = document.getElementsByClassName('btn-start-treasurehunt')[0];
+                const start_th = document.getElementsByClassName('btn-start')[0];
                 start_th.addEventListener('click', start_thBtnHandler);
         
-                const stop_th = document.getElementsByClassName('btn-stop-treasurehunt')[0];
+                const stop_th = document.getElementsByClassName('btn-stop')[0];
                 stop_th.addEventListener('click', stop_thBtnHandler);
         
                 const flag_correct = Array.from(document.getElementsByClassName('btn-flag-correct'));
