@@ -410,5 +410,28 @@
                 flag_wrong.forEach(flag => flag.addEventListener('click', flagwrong_thBtnHandler));
                
             });
-    
+
 })();
+
+
+(function () {
+    // Clear leaderboard button callback.
+    const clearLeaderboardBtnHandler = function () {
+        const request = new XMLHttpRequest();
+        request.addEventListener('load', () => {
+            toastr.success('Leaderboard successfully cleared!');
+        });
+        request.addEventListener('error', () => {
+            toastr.error('Failed to clear leaderboard.');
+        });
+        request.open('GET', LEADERBOARD_URL + '/clearLeaderboard');
+        request.send();
+    };
+    
+    // Listen on clear leaderboard button.
+    const clearLeaderboardBtn = document.getElementsByClassName('btn-clear-leaderboard')[0];
+    clearLeaderboardBtn.addEventListener('click', clearLeaderboardBtnHandler);
+
+})();
+
+    
