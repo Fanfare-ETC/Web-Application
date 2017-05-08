@@ -57,9 +57,11 @@
       var msg = evt.data.split(","); 
       if(msg.includes("wanderer"))
       {
+        msg[1] = parseInt(msg[1]);
+        msg[2] = parseInt(msg[2]);
+        msg[3] = parseInt(msg[3]);
       if(msg[1] > msg[2] && msg[1] > msg[3])
             {       
-                 
                   document.body.style.backgroundColor = "red";
             }
       else if(msg[2] > msg[1] && msg[2] > msg[3])
@@ -69,7 +71,6 @@
             }
       else if(msg[3] > msg[1] && msg[3] > msg[2])
             {       
-                        
                   document.body.style.backgroundColor = "lightblue";
             }
 	    else {}
@@ -78,7 +79,7 @@
       {
         //{"event":"state","game_on":true,"flag1":true,"flag2":true,"flag3":false,"game_off":false}
       var page = JSON.parse(evt.data);
-      console.log(page.game_on,page.flag1,page.flag2,page.flag3,page.game_off);
+      //console.log(page.game_on,page.flag1,page.flag2,page.flag3,page.game_off);
       if(page.game_on===true)
       {
       
