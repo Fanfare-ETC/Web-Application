@@ -167,15 +167,17 @@
                 <br><br>
                </div>
             </div>
-		   
+	    	   
             <div class="well">
+              <!--
               <h3>Bird Map - Section 1</h3>
               <img align="left" id="img" class="final-img" src="images/crane.png" width="50%" height="50%"/>
-				<br><br>
+		<br><br>
                 <br><br>
-				<br><br>
+		<br><br>
                 <br><br>
-				<h3>Boat Map - Section 2</h3>
+                -->
+	      <h3>Boat Map - Section 1</h3>
               <img align="left" id="img" class="final-img" src="images/boat.png" width="50%" height="50%"/>
                <br><br>
                <br><br>
