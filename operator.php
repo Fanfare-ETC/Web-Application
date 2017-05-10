@@ -149,18 +149,18 @@
               <h3>Section 1</h3>
               <div class="buttons">
 
-                <button hidden id= "flag1-correct" type="button" class="btn-flag-correct">Flag 1 - Correct</button>
-                <button hidden id= "flag1-wrong" type="button" class="btn-flag-wrong">Flag 1 - Wrong</button>
+                <button hidden id= "flag1-correct" type="button" class="btn-flag-correct">Marker 1 - Correct</button>
+                <button hidden id= "flag1-wrong" type="button" class="btn-flag-wrong">Marker 1 - Wrong</button>
                 <img hidden align="right" id="left-1-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
                 <img hidden align="right" id="left-1-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="5%" height="5%"/>
                 <br><br>
-                <button hidden id= "flag2-correct" type="button" class="btn-flag-correct">Flag 2 - Correct</button>
-                <button hidden id= "flag2-wrong" type="button" class="btn-flag-wrong">Flag 2 - Wrong</button>
+                <button hidden id= "flag2-correct" type="button" class="btn-flag-correct">Marker 2 - Correct</button>
+                <button hidden id= "flag2-wrong" type="button" class="btn-flag-wrong">Marker 2 - Wrong</button>
                 <img hidden align="right" id="left-2-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
                 <img hidden align="right" id="left-2-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="5%" height="5%"/>
                 <br><br>
-                <button hidden id= "flag3-correct" type="button" class="btn-flag-correct">Flag 3 - Correct</button>
-                <button hidden id= "flag3-wrong" type="button" class="btn-flag-wrong">Flag 3 - Wrong</button>
+                <button hidden id= "flag3-correct" type="button" class="btn-flag-correct">Marker 3 - Correct</button>
+                <button hidden id= "flag3-wrong" type="button" class="btn-flag-wrong">Marker 3 - Wrong</button>
                 <img hidden align="right" id="left-3-correct" class="btn-flag-correct-img" src="images/approved.png" width="5%" height="5%"/>
                 <img hidden align="right" id="left-3-wrong" class="btn-flag-wrong-img" src="images/declined.png" width="5%" height="5%"/>
 
