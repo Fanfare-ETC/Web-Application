@@ -45,9 +45,15 @@
       {
        // console.log('ws.onopen');
       };
+      
+      var f1 = false;
+      var f2 = false;
+      var f3 = false;
                         
       ws.onmessage = function (evt) 
       { 
+      
+      
       if (evt.data == "plus10warmer" || evt.data == "plus10colder" || evt.data == "plus10marker" ) 
       {
         console.log("Ignoring the server side aggregate broadcast");
@@ -79,41 +85,60 @@
       {
         //{"event":"state","game_on":true,"flag1":true,"flag2":true,"flag3":false,"game_off":false}
       var page = JSON.parse(evt.data);
-      //console.log(page.game_on,page.flag1,page.flag2,page.flag3,page.game_off);
+      console.log(page.game_on,page.flag1,page.flag2,page.flag3,page.game_off,f1);       
+      //identify reset state
+      if(page.game_on === false && page.game_off === false)
+      {
+      f1=false;
+      }
       if(page.game_on===true)
       {
       
-      if(page.flag1===true && page.flag2===false && page.flag3===false)
+      if(f1 && page.flag1===true && page.flag2===false && page.flag3===false)
       {
          document.getElementById('flag1').innerHTML="Marker-1";
          document.getElementById('flagstatus1').src="../images/approved.png";
+         f1=true;
       }
-      if(page.flag1===false && page.flag2===false && page.flag3===false)
+      if(f1 && page.flag1===false && page.flag2===false && page.flag3===false)
       {
         document.getElementById('flag1').innerHTML="Marker-1";
-       document.getElementById('flagstatus1').src="../images/declined.png";
+        document.getElementById('flagstatus1').src="../images/declined.png";
+        f1=false;
       }
-      if(page.flag2===true && page.flag1===true && page.flag3===false)
+      if(f1===false){ f1=true;}
+      else
+      {
+      if(f2 &&page.flag2===true && page.flag1===true && page.flag3===false)
       {
          document.getElementById('flag2').innerHTML="Marker-2";
          document.getElementById('flagstatus2').src="../images/approved.png";
+         f2=true;
       }
-      if(page.flag2===false && page.flag1===true && page.flag3===false)
+      if( f2 && page.flag2===false && page.flag1===true && page.flag3===false)
       {
          document.getElementById('flag2').innerHTML="Marker-2";
          document.getElementById('flagstatus2').src="../images/declined.png";
+         f2=false;
       }
-      if(page.flag3===true && page.flag2===true && page.flag1===true)
+      if(f2===false){ f2=true;}
+      else
+      {
+      if(f3 && page.flag3===true && page.flag2===true && page.flag1===true)
       {
          document.getElementById('flag3').innerHTML="Marker-3";
          document.getElementById('flagstatus3').src="../images/approved.png";
+         f3=true;
       }
-      if(page.flag3===false && page.flag2===true && page.flag1===true)
+      if(f3 && page.flag3===false && page.flag2===true && page.flag1===true)
       {
          document.getElementById('flag3').innerHTML="Marker-3";
          document.getElementById('flagstatus3').src="../images/declined.png";
+         f3=false;
       }
-      
+      if(f3===false){ f3=true;}
+      }//f2
+      }//f1
       }//ifgameon 
       if(page.game_off)
       {
